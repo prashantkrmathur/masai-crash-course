@@ -1,0 +1,96 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+.circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: relative;
+  background-color: #3498db;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.circle span {
+  display: none;
+  font-size: 24px;
+  color: white;
+}
+.small-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.circle:hover .small-circle:nth-child(2) {
+  animation: move-up-left-corner 2s infinite linear;
+}
+.circle:hover .small-circle:nth-child(3) {
+  animation: move-up-right-corner 2s infinite linear;
+}
+.circle:hover .small-circle:nth-child(4) {
+  animation: move-down-right-corner 2s infinite linear;
+}
+.circle:hover .small-circle:nth-child(5) {
+  animation: move-down-left-corner 2s infinite linear;
+}
+.circle:hover .small-circle:nth-child(6) {
+  animation: move-up-center 2s infinite linear;
+}
+.circle:hover .small-circle:nth-child(7) {
+  animation: move-right-center 2s infinite linear;
+}
+.circle:hover .small-circle:nth-child(8) {
+  animation: move-down-center 2s infinite linear;
+}
+.circle:hover .small-circle:nth-child(9) {
+  animation: move-left-center 2s infinite linear;
+}
+.circle:hover span {
+  display: block;
+  animation: fade-in-out 2s infinite linear;
+}
+@keyframes move-up-left-corner {
+  0%, 100% { top: 50%; left: 50%; }
+  50% { top: 0%; left: 0%; }
+}
+@keyframes move-up-right-corner {
+  0%, 100% { top: 50%; left: 50%; }
+  50% { top: 0%; left: 100%; }
+}
+@keyframes move-down-right-corner {
+  0%, 100% { top: 50%; left: 50%; }
+  50% { top: 100%; left: 100%; }
+}
+@keyframes move-down-left-corner {
+  0%, 100% { top: 50%; left: 50%; }
+  50% { top: 100%; left: 0%; }
+}
+@keyframes move-up-center {
+  0%, 100% { top: 50%; left: 50%; }
+  50% { top: -10%; left: 50%; }
+}
+@keyframes move-right-center {
+  0%, 100% { top: 50%; left: 50%; }
+  50% { top: 50%; left: 110%; }
+}
+@keyframes move-down-center {
+  0%, 100% { top: 50%; left: 50%; }
+  50% { top: 110%; left: 50%; }
+}
+@keyframes move-left-center {
+  0%, 100% { top: 50%; left: 50%; }
+  50% { top: 50%; left: -10%; }
+}
+@keyframes fade-in-out {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
