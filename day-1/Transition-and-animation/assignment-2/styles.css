@@ -1,0 +1,62 @@
+body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #fef9e7; /* Pale yellow background */
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+.text {
+    position: absolute;
+    top: 50%;
+    left: -150px; /* Start from outside the left of the screen */
+    transform: translateY(-50%);
+    white-space: nowrap;
+    font-size: 20px;
+    font-weight: bold; /* Bold text */
+    color: black; /* Text color */
+    animation: move-text 5s forwards; /* Animate to the center and stop */
+}
+.container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin-left: 700px; /* Aligns icons on the right side of the screen */
+}
+.icon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    color: #3498db;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotate 10s linear infinite;
+}
+.icon:nth-child(1) { transform-origin: 0px 100px; }
+.icon:nth-child(2) { transform-origin: 0px 100px; animation-delay: -1.25s; }
+.icon:nth-child(3) { transform-origin: 0px 100px; animation-delay: -2.5s; }
+.icon:nth-child(4) { transform-origin: 0px 100px; animation-delay: -3.75s; }
+.icon:nth-child(5) { transform-origin: 0px 100px; animation-delay: -5s; }
+.icon:nth-child(6) { transform-origin: 0px 100px; animation-delay: -6.25s; }
+.icon:nth-child(7) { transform-origin: 0px 100px; animation-delay: -7.5s; }
+.icon:nth-child(8) { transform-origin: 0px 100px; animation-delay: -8.75s; }
+.paused {
+    animation-play-state: paused;
+}
+@keyframes rotate {
+    0% { transform: rotate(0deg) translate(100px) rotate(0deg); }
+    100% { transform: rotate(360deg) translate(100px) rotate(-360deg); }
+}
+@keyframes move-text {
+    0% { left: -150px; }
+    100% { left: 250px; } /* Stops at the center of the screen */
+}
