@@ -1,4 +1,4 @@
-const API_KEY = 'db201d28'; // Replace with your actual OMDB API key
+const API_KEY = 'db201d28'; 
 
 const searchBox = document.getElementById('searchBox');
 const resultsContainer = document.getElementById('results');
